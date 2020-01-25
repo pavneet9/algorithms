@@ -1,0 +1,26 @@
+class GreedyAlgorithm(object):
+      def __init__(self):
+          self.jobsOrder = []
+
+      def readFromFile(self, file):
+          file = open(file, 'r')
+          i = 0
+          for line in file.readlines():
+              if i !=0:
+                  self.addJob(line, i)
+              i += 1
+
+
+      def addJob(line):
+          el = line.split(" ")
+          sort = el[0]/el[1]
+          self.jobsOrder.append([i, el[0], el[1], sort])
+
+
+
+
+
+
+if __name__ == "__main__":
+    jobSorter = GreedyAlgorithm()
+    jobSorter.readFromFile("Job.txt")
